@@ -42,6 +42,7 @@ import {
     @CreateDateColumn()
     createdAt: Date;
   
+    // this updates the date
     @Column()
     @UpdateDateColumn()
     updatedAt: Date;
