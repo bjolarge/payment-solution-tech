@@ -36,26 +36,6 @@ export class AuthController {
     return user;
   }
  
-  // @HttpCode(200)
-  // @UseGuards(LocalAuthenticationGuard)
-  // @Post('log-in')
-  // async logIn(@Req() request: RequestWithUser, @Res() response: Response) {
-  //   const {user} = request;
-  //   const accessTokenCookie = this.authService.getCookieWithJwtAccessToken(user.id);
-  //   const refreshTokenCookie = this.authService.getCookieWithJwtRefreshToken(user.id);
- 
-  //   await this.userService.setCurrentRefreshToken(refreshToken, user.id);
- 
-  //   request.res.setHeader('Set-Cookie', [accessTokenCookie, refreshTokenCookie]);
-  //   return user;
-  //   // const cookie = this.authService.getCookieWithJwtToken(user.id);
-  //   // response.setHeader('Set-Cookie', cookie);
-  //   // user.password = undefined;
-  //   // console.log("successfully log in");
-  //   // return response.send(user);
-  // }
- 
-
   //real login with token feature
   @HttpCode(200)
   @UseGuards(LocalAuthenticationGuard)
@@ -102,6 +82,7 @@ export class AuthController {
   //   request.res.setHeader('Set-Cookie', this.authService.getCookiesForLogOut());
   // }
 
+  //logout feature
   @UseGuards(LocalAuthenticationGuard)
   @Post('log-out')
   @HttpCode(200)
