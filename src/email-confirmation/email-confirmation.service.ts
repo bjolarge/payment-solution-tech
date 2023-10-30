@@ -59,7 +59,7 @@ export class EmailConfirmationService {
  
     const url = `${this.configService.get('EMAIL_CONFIRMATION_URL')}?token=${token}`;
  
-    const text = `Welcome to the application. To confirm the email address, click here: ${url}`;
+    const text = `Welcome to the Atech payment application. To confirm the email address, click here: ${url}`;
  
     return this.emailService.sendMail({
       to: email,
